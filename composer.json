@@ -1,14 +1,28 @@
 {
     "name": "dskripchenko/laravel-admin-search",
     "description": "Глобальный поиск (cmd+K) по Resource'ам для dskripchenko/laravel-admin.",
-    "license": "MIT",
     "type": "library",
+    "keywords": [
+        "laravel",
+        "admin",
+        "search",
+        "global-search",
+        "cmd-k",
+        "spotlight",
+        "dskripchenko"
+    ],
+    "homepage": "https://github.com/dskripchenko/laravel-admin-search",
+    "license": "MIT",
     "authors": [
         {
             "name": "Denis Skripchenko",
             "email": "denskrp90@gmail.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/dskripchenko/laravel-admin-search/issues",
+        "source": "https://github.com/dskripchenko/laravel-admin-search"
+    },
     "require": {
         "php": "^8.5",
         "dskripchenko/laravel-admin": "^1.0"
@@ -38,11 +52,14 @@
             "providers": [
                 "Dskripchenko\\LaravelAdminSearch\\AdminSearchServiceProvider"
             ]
+        },
+        "branch-alias": {
+            "dev-main": "1.x-dev"
         }
     },
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
