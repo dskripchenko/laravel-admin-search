@@ -1,5 +1,11 @@
 includes:
     - vendor/larastan/larastan/extension.neon
+    # Baseline holds 4 findings around the Searchable *trait* used as a type
+    # (Resource&Searchable intersection). PHPStan can't treat a trait as a type,
+    # but at runtime every searchable Resource `use`s it, so the calls are valid.
+    # Resolving cleanly would require turning Searchable into an interface — a
+    # breaking change for consumers.
+    - phpstan-baseline.neon
 
 parameters:
     level: 5

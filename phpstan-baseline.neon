@@ -1,0 +1,25 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Trait Dskripchenko\\LaravelAdminSearch\\Concerns\\Searchable is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Concerns/Searchable.php
+
+		-
+			message: '#^PHPDoc tag @var for variable \$resource contains unresolvable type\.$#'
+			identifier: varTag.unresolvableType
+			count: 1
+			path: src/SearchService.php
+
+		-
+			message: '#^Parameter \#1 \$array of function usort contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: src/SearchService.php
+
+		-
+			message: '#^Parameter \#2 \$callback of function usort contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: src/SearchService.php
