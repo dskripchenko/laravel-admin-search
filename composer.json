@@ -1,6 +1,6 @@
 {
     "name": "dskripchenko/laravel-admin-search",
-    "description": "Глобальный поиск (cmd+K) по Resource'ам для dskripchenko/laravel-admin.",
+    "description": "Global search across resources (Cmd+K) for dskripchenko/laravel-admin.",
     "type": "library",
     "keywords": [
         "laravel",
