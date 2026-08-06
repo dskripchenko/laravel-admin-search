@@ -1,6 +1,6 @@
 # dskripchenko/laravel-admin-search
 
-> 🌐 **English** · [Русский](README.ru.md) · [Deutsch](README.de.md) · [中文](README.zh.md)
+> 🌐 **English** · [Русский](docs/ru/README.md) · [Deutsch](docs/de/README.md) · [中文](docs/zh/README.md)
 
 Global search (⌘K / Ctrl+K). Eloquent driver by default, Laravel Scout adapter optional.
 
