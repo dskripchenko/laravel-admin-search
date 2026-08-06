@@ -5,7 +5,7 @@
 
 Глобальный поиск (cmd+K / ctrl+K) для `dskripchenko/laravel-admin`. Eloquent-driver default, Scout — опционально.
 
-Полная спецификация: [laravel-admin/docs/sister-packs/search.md](https://github.com/dskripchenko/laravel-admin/blob/main/docs/sister-packs/search.md).
+Полная спецификация: [laravel-admin/docs/ru/sister-packs/search.md](https://github.com/dskripchenko/laravel-admin/blob/main/docs/ru/sister-packs/search.md).
 
 ## Статус
 
