@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace Dskripchenko\LaravelAdminSearch\Drivers;
 
 /**
- * Через Laravel\Scout::search(). Активируется если в host'е установлен
- * laravel/scout и модели Resource'ов имеют trait `Laravel\Scout\Searchable`.
+ * Goes through Laravel\Scout::search(). It engages when the host has
+ * laravel/scout installed and the resources' models use the
+ * `Laravel\Scout\Searchable` trait.
  *
- * Поля игнорируются — Scout сам решает что индексировать на основе
+ * The fields are ignored — Scout decides what to index itself, from
  * model::toSearchableArray().
  */
 final class ScoutSearchDriver implements SearchDriver
@@ -18,7 +19,7 @@ final class ScoutSearchDriver implements SearchDriver
         if (! class_exists($modelClass)) {
             return [];
         }
-        // Scout не обязательно установлен; проверяем trait наличия.
+        // Scout is not necessarily installed; we check for the trait.
         if (! method_exists($modelClass, 'search')) {
             return [];
         }

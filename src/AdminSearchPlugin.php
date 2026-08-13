@@ -8,9 +8,10 @@ use Dskripchenko\LaravelAdmin\Admin;
 use Dskripchenko\LaravelAdmin\Plugin\AdminPlugin;
 
 /**
- * AdminSearchPlugin — placeholder, поскольку search-pack не вводит свои
- * Resource'ы / Permissions. Регистрация плагина в config'е нужна в основном
- * для discovery (Admin::getPlugins() показывает что pack установлен).
+ * AdminSearchPlugin is a placeholder, since the search pack introduces no
+ * resources or permissions of its own. Registering the plugin in the config is
+ * needed mostly for discovery (Admin::getPlugins() then shows that the pack is
+ * installed).
  */
 final class AdminSearchPlugin implements AdminPlugin
 {
@@ -28,7 +29,7 @@ final class AdminSearchPlugin implements AdminPlugin
 
     public function boot(Admin $admin): void
     {
-        // No resources / no permissions — search использует существующие
-        // <resource>.view permissions через SearchService.
+        // No resources and no permissions — the search uses the existing
+        // <resource>.view permissions through SearchService.
     }
 }

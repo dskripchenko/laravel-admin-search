@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Dskripchenko\LaravelAdminSearch\Concerns;
 
 /**
- * Trait для Resource'ов, которые должны участвовать в global search.
+ * A trait for the resources that should take part in the global search.
  *
- * Подключается в Resource:
+ * It is used inside a resource:
  *
  *     class UserResource extends Resource {
  *         use Searchable;
@@ -15,22 +15,23 @@ namespace Dskripchenko\LaravelAdminSearch\Concerns;
  *         public function searchTitle(): string { return 'name'; }
  *     }
  *
- * Все методы trait'а имеют sane defaults — Resource переопределяет только
- * нужные.
+ * Every method of the trait has a sane default — a resource overrides only the
+ * ones it needs.
  */
 trait Searchable
 {
     /**
-     * Поля для LIKE/Scout-поиска. Дублируется с Resource::searchableFields(),
-     * но trait переопределяет (search-нужны более широкие fields обычно).
+     * The fields for the LIKE/Scout search. It duplicates
+     * Resource::searchableFields(), but the trait wins (a search usually needs a
+     * wider set of fields).
      *
      * @return list<string>
      */
     abstract public function searchableFields(): array;
 
     /**
-     * Имя поля, отображаемого как title в результате (default 'name'/'title'/
-     * 'id' — пробуем по очереди).
+     * The name of the field shown as the title in a result (by default
+     * 'name'/'title'/'id', tried in that order).
      */
     public function searchTitle(): string
     {
@@ -38,8 +39,8 @@ trait Searchable
     }
 
     /**
-     * Имя поля для subtitle (мелкого пояснения — обычно email/slug/etc).
-     * null — не показывать subtitle.
+     * The name of the field for the subtitle (the small explanation — usually an
+     * email, a slug and the like). null means no subtitle is shown.
      */
     public function searchSubtitle(): ?string
     {
@@ -47,7 +48,7 @@ trait Searchable
     }
 
     /**
-     * Lucide-icon name для группы. По умолчанию из Resource::$icon.
+     * The Lucide icon name for the group. Taken from Resource::$icon by default.
      */
     public function searchIcon(): ?string
     {
@@ -56,8 +57,8 @@ trait Searchable
     }
 
     /**
-     * URL/route для выбранного результата. По умолчанию — edit-страница
-     * Resource'а.
+     * The URL or route of a selected result. By default the resource's edit
+     * page.
      *
      * @param  array<string, mixed>  $row
      */
@@ -73,7 +74,7 @@ trait Searchable
     }
 
     /**
-     * Приоритет в выдаче (выше — раньше). По умолчанию 0.
+     * The priority in the output (the higher, the earlier). 0 by default.
      */
     public function searchPriority(): int
     {

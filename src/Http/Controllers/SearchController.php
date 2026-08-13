@@ -18,7 +18,7 @@ final class SearchController extends ApiController
     public function __construct(private readonly SearchService $service) {}
 
     /**
-     * @input string $q  Поисковый запрос.
+     * @input string $q  The search query.
      *
      * @output object $payload
      * @output array $payload.groups

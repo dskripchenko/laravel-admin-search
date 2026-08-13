@@ -7,12 +7,12 @@ namespace Dskripchenko\LaravelAdminSearch\Drivers;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Контракт search-driver'а.
+ * The contract of a search driver.
  *
- * Реализации:
- *   - EloquentSearchDriver — LIKE по полям, default
- *   - ScoutSearchDriver — через Laravel\Scout (если установлен), для
- *     production-grade indexed-search
+ * The implementations:
+ *   - EloquentSearchDriver — a LIKE over the fields, the default one
+ *   - ScoutSearchDriver — through Laravel\Scout (when installed), for a
+ *     production-grade indexed search
  */
 interface SearchDriver
 {

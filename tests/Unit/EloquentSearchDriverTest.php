@@ -8,7 +8,7 @@ use Dskripchenko\LaravelAdminSearch\Drivers\EloquentSearchDriver;
 use Dskripchenko\LaravelAdminSearch\Tests\TestCase;
 use Illuminate\Database\Eloquent\Model;
 
-/** Inline-fixture model для search-driver tests. */
+/** An inline fixture model for the search-driver tests. */
 class TestSearchUser extends Model
 {
     protected $table = 'test_search_users';

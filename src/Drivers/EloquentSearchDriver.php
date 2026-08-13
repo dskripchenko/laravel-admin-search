@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Dskripchenko\LaravelAdminSearch\Drivers;
 
 /**
- * LIKE %query% по каждому из searchable-полей. OR-семантика.
+ * A LIKE %query% over each of the searchable fields, with OR semantics.
  *
- * Подходит для проектов до ~100K записей суммарно. Для больших таблиц
- * нужен ScoutSearchDriver.
+ * Suitable for projects up to about 100K rows in total. Larger tables need the
+ * ScoutSearchDriver.
  */
 final class EloquentSearchDriver implements SearchDriver
 {

@@ -94,7 +94,7 @@ final class SearchServiceTest extends TestCase
 
         /** @var SearchService $service */
         $service = app(SearchService::class);
-        // hasPermission всегда false → ничего не вернётся
+        // hasPermission is always false, so nothing comes back
         $groups = $service->search('Carol', fn () => false);
 
         $this->assertSame([], $groups);
@@ -104,14 +104,14 @@ final class SearchServiceTest extends TestCase
     {
         /** @var SearchService $service */
         $service = app(SearchService::class);
-        // min_length = 2, передаём 1 символ
+        // min_length = 2 and we pass a single character
         $this->assertSame([], $service->search('a', fn () => true));
     }
 
     public function test_search_endpoint_registered(): void
     {
-        // Endpoint существует (не 404). Не auth'ed → 401 нормальный отклик
-        // от admin web-auth middleware.
+        // The endpoint exists (it is not a 404). Unauthenticated, so a 401 is
+        // the normal answer from the admin web-auth middleware.
         $response = $this->getJson('/api/admin/system/search?q=Alice');
         $this->assertNotSame(404, $response->status());
     }

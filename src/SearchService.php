@@ -9,8 +9,8 @@ use Dskripchenko\LaravelAdminSearch\Concerns\Searchable;
 use Dskripchenko\LaravelAdminSearch\Drivers\SearchDriver;
 
 /**
- * Запускает search по всем Resource'ам, использующим trait Searchable,
- * с permission-фильтрацией.
+ * Runs the search across every resource that uses the Searchable trait, with
+ * permission filtering.
  */
 final class SearchService
 {
@@ -43,12 +43,12 @@ final class SearchService
             if (! class_exists($class)) {
                 continue;
             }
-            // Trait check: только Resource'ы с trait Searchable участвуют.
+            // A trait check: only the resources with the Searchable trait take part.
             if (! in_array(Searchable::class, class_uses_recursive($class), true)) {
                 continue;
             }
 
-            // Permission check — обращаемся к статическому permission()-методу.
+            // A permission check — we call the static permission() method.
             $base = $this->resolvePermission($class);
             if ($base !== null && ! $hasPermission($base.'.view')) {
                 continue;
@@ -98,8 +98,8 @@ final class SearchService
     }
 
     /**
-     * Базовый permission-key для Resource'а (admin.{slug}). null если
-     * static::permission() недоступен.
+     * The base permission key of a resource (admin.{slug}). null when
+     * static::permission() is unavailable.
      *
      * @param  class-string  $class
      */
